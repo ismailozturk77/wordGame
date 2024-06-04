@@ -9,13 +9,20 @@ public class GameController : MonoBehaviour
 {
     public string[] sentences;
     public static int lastSelected = -1;
+    public static int skor = 0;
     private List<string> selectedSentences = new List<string>();
     private List<int> chooseOrder = new List<int>();
     private List<int> choosedOrder = new List<int>();
-    public GameObject textParent, correctObject, failedObject, touchStop;
-    public TextMeshProUGUI answerText;
+    public GameObject textParent, correctObject, failedObject, touchStop, questionObject;
+    public TextMeshProUGUI answerText, skorText;
+    public AudioSource clickSound;
     private void Start()
     {
+        skorText.text = "Skor: " + skor.ToString();
+        if (skor > PlayerPrefs.GetInt("highScore"))
+        {
+            PlayerPrefs.SetInt("highScore", skor);
+        }
         selectRandomSentence();
         answerText.text = "Bekle";
     }
@@ -76,22 +83,33 @@ public class GameController : MonoBehaviour
         {
             answerText.text = "";
         }
+        clickSound.PlayOneShot(clickSound.clip);
         choosedOrder.Add(selectId);
         answerText.text += selectedSentences[selectId] + " ";
         if (choosedOrder.Count == 4)
         {
             if (choosedOrder.SequenceEqual(chooseOrder))
             {
-                correctObject.gameObject.SetActive(true);
+                correctObject.SetActive(true);
+                skor += 1;
             }
             else
             {
-                failedObject.gameObject.SetActive(true);
+                questionObject.SetActive(true);
             }
         }
     }
     public void resetScene()
     {
+        SceneManager.LoadScene(1);
+    }
+    public void anaMenu()
+    {
+        if (skor > PlayerPrefs.GetInt("highScore"))
+        {
+            PlayerPrefs.SetInt("highScore", skor);
+        }
+        skor = 0;
         SceneManager.LoadScene(0);
     }
 }
