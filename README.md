@@ -7,7 +7,7 @@ Uludağ Üniversitesi
    
 4 yatay ve 4 dikey toplam 16 kutucuk bulunmaktadır. Bu kutular sırası ile 4 kez yeşil şekilde yanmaktadır. Doğru şekilde sırayı takip edip doğru tıklarsanız skor elde edersiniz, ancak yanlış ilerlerseniz ve başarmazsanız karşınıza çıkan matematik işlemini çözüp kaldığınız yerden devam edersiniz fakat matematik işlemini de yanlış yaparsanız tamamen oyunu kaybedersiniz. En büyük amacınız skoru ilerletmek.
 
-3.	Ölçüm 
+2.	Ölçüm 
 
 Kişinin dikkatti anlık gösterilecek renkler ile ölçülecek. 
 Hafızası anlık gördüğü renkleri ve cümleleri aklında tutması ile ölçülecek. 
