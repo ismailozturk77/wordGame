@@ -55,7 +55,7 @@ https://github.com/ismailozturk77/wordGame/assets/116886498/71dd86f5-1b76-4180-8
 
 
 
-https://github.com/ismailozturk77/wordGame/assets/116886498/71dd86f5-1b76-4180-817c-2593c937c535
+
 
 
 
